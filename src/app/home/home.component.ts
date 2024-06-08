@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../employee/services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,9 +9,17 @@ import { ApiService } from '../employee/services/api.service';
 })
 export class HomeComponent {
 
-  constructor(private api: ApiService) {
-    // this.api.getALLEmployee().subscribe({
-      
-    // })
+  count:any=0
+
+  constructor(private api: ApiService,private router:Router) {
+     this.api.getALLEmployee().subscribe((res:any)=>{
+       this.count=res.length
+     })
+}
+
+
+logout(){
+  sessionStorage.removeItem('admin')
+  this.router.navigateByUrl('')
 }
 }

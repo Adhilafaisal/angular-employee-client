@@ -1,14 +1,19 @@
 <div class="w-100 row">
   <div class="col-2">
     <div style="height: 93vh" class="bg-dark pt-5">
-      <h5 class="text-center">
-        <a routerLink="/home" class="text-light text-decoration-none">Home</a>
-      </h5>
-      <h5 class="text-center mt-5">
-        <a routerLink="/employee" class="text-light text-decoration-none"
-          >Employee</a
-        >
-      </h5>
+      <div>
+        <h5 class="text-center">
+          <a routerLink="/home" class="text-light text-decoration-none">Home</a>
+        </h5>
+        <h5 class="text-center mt-5">
+          <a routerLink="/employee" class="text-light text-decoration-none"
+            >Employee</a
+          >
+        </h5>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-link text-danger" (click)="logout()">Logout</button>
+      </div>
     </div>
   </div>
   <div class="col-10 p-2 row">
@@ -32,7 +37,7 @@
         <app-profile></app-profile>
       </div>
       <div class="p-5 text-light" style="background-image: url(https://img.freepik.com/free-photo/flat-lay-desk-concept-with-copy-space_23-2148236810.jpg);">
-       <h3>Employee Count:</h3>
+       <h3>Employee Count:{{count}}</h3>
       </div>
     </div>
   </div>

@@ -1,1 +1,22 @@
-<p>profile works!</p>
+<div class="d-flex flex-column align-items-center justify-content-center border shadow " style=" height:100%;">
+   <button class="btn btn-link" (click)="onStatus()" *ngIf="!profileStatus">
+   Edit Admin Profile
+   </button> 
+   <div  *ngIf="profileStatus">
+    <form class="p-5 mb-5" #adminForm="ngForm" (ngSubmit)="handleSubmit()">
+    <label >
+        <input type="file" id="ff" (change)="getFile($event)" style="visibility: hidden;">
+        <img [src]="profilePicture" alt="img" width="250px" height="200px">
+    </label>
+    <div class="text-danger" *ngIf="adminForm.invalid">
+        *Invalid inputs
+    </div>
+    <input type="email" name="em" required [(ngModel)]="adminDetails.email" class="form-control my-3" placeholder="Enter Admin Email">
+    <input type="text" name="ps" required [(ngModel)]="adminDetails.password" class="form-control mb-3" placeholder="Enter Admin Password">
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-success " type="submit" [disabled]="adminForm.invalid">Update</button>
+        <button type="button" class="btn btn-danger " (click)="onStatus()">Cancel</button>
+    </div>
+    </form>
+   </div>
+</div>

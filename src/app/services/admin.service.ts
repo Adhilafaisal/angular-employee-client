@@ -13,4 +13,12 @@ getAdmin(){
   return this.http.get(`${this.server_url}/users/1`)
 }
 
+updateAdmin(data:any){
+  return this.http.put(`${this.server_url}/users/1`,data)
+ }
+
+ isLoggedIn(){
+  return !!sessionStorage.getItem('admin')
+ }
+
 }
