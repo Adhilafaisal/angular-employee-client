@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-  Base_url:string="https://angular-employe-server.onrender.com/"
+  Base_url:string="https://angular-employe-server.onrender.com"
 
   constructor(private http:HttpClient) { }
 
